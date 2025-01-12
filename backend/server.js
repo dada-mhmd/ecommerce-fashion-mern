@@ -17,7 +17,17 @@ cloudinaryConfig();
 
 // middleware
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'https://ecommerce-fashion-frontend.vercel.app',
+      'http://localhost:5173',
+      'http://localhost:5174',
+    ],
+    credentials: true,
+  })
+);
 
 // api routes
 
